@@ -70,7 +70,8 @@ Everything except the 1C preview works immediately. The preview needs a local
 
 ## Using the editor
 
-<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/b8a62bd1-cc74-462b-b307-c3871dbda67c" />
+<img width="1916" height="990" alt="image" src="https://github.com/user-attachments/assets/08361130-df17-42e9-9602-35aa3472c935" />
+
 
 
 The window is a sidebar of four pages, with a status bar and **Apply changes**
