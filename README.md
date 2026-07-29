@@ -70,6 +70,9 @@ Everything except the 1C preview works immediately. The preview needs a local
 
 ## Using the editor
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/b8a62bd1-cc74-462b-b307-c3871dbda67c" />
+
+
 The window is a sidebar of four pages, with a status bar and **Apply changes**
 always visible at the bottom. Each page shows a count, so you can see at a glance
 how much is loaded.
