@@ -47,7 +47,7 @@
 **С Python:**
 
 ```bash
-git clone https://github.com/<ваш-логин>/mxl-column-editor.git
+git clone https://github.com/SergiosZZz/mxl-column-editor.git
 cd mxl-column-editor
 python mxl_column_editor.py
 ```
