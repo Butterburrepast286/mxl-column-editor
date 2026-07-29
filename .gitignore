@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Editors
+.vscode/
+.idea/
+
+# Local working files, not part of the project
+backup/
+TODO.txt
+
+# Program output -- never commit customer data or generated files
+_mxl_backup_*/
+render_check/
+*.html
+mxl_diagnostic.*
+
+# Test data: .mxl templates belong to whoever owns the configuration.
+# The 1C assets under onec/ are part of the tool and must NOT be ignored.
+*.mxl
+!onec/**
