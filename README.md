@@ -1,3 +1,5 @@
+**Language / Язык:**  English  ·  [Русский](README.ru.md)
+
 # MXL Column Editor
 
 A desktop tool for bulk-editing register columns in **1C:Enterprise spreadsheet
@@ -323,6 +325,4 @@ approach.
 
 [MIT](LICENSE).
 
-The bundled 1C artifacts (`MxlToHtml.epf`, `MxlRendererTemplate.dt`) originate with
-[@alexiosus](https://github.com/alexiosus) and are redistributed here with his
-permission.
+The bundled 1C artifacts (`MxlToHtml.epf

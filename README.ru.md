@@ -1,4 +1,4 @@
-[English](README.md) · **Русский**
+**Language / Язык:**  [English](README.md)  ·  Русский
 
 # MXL Column Editor
 
@@ -323,5 +323,4 @@ onec/
 
 [MIT](LICENSE).
 
-Вложенные артефакты 1С (`MxlToHtml.epf`, `MxlRendererTemplate.dt`) принадлежат
-[@alexiosus](https://github.com/alexiosus) и распространяются здесь с его разрешения.
+Вложенные артефакты 1С (`MxlToHtml.epf`, `MxlRen
