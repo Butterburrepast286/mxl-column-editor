@@ -325,4 +325,6 @@ approach.
 
 [MIT](LICENSE).
 
-The bundled 1C artifacts (`MxlToHtml.epf
+The bundled 1C artifacts (`MxlToHtml.epf`, `MxlRendererTemplate.dt`) originate with
+[@alexiosus](https://github.com/alexiosus) and are redistributed here with his
+permission.
