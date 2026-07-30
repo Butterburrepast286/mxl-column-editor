@@ -260,6 +260,7 @@ and prints 1C's own error text if anything fails.
 | A 1C window sits on screen | Normal for the resident session — it is minimised automatically. *Tools → Keep 1C running between previews* turns it off. |
 | Nothing happens when applying | Check the Files page: files showing an en dash have nothing to change. |
 | A file "could not be parsed" | It is not a MOXCEL document, or is truncated. |
+| Ctrl+V does nothing in a text box | Fixed in the current version. Tk binds paste to the Latin `v` keysym, so a Cyrillic layout broke it; shortcuts are now matched by keycode, and every text box has a right-click menu. |
 
 ---
 

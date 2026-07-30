@@ -1847,7 +1847,80 @@ def setup_style(root):
               lightcolor=[("selected", CARD)],
               darkcolor=[("selected", CARD)],
               font=[("selected", (_FAMILY, 10, "bold"))])
+
+    enable_clipboard_shortcuts(root)
     return style
+
+
+def enable_clipboard_shortcuts(root):
+    """
+    Make Ctrl+C/V/X/A work whatever the keyboard layout is.
+
+    Tk binds the clipboard events by keysym, so with a Cyrillic layout Ctrl+V
+    arrives as Cyrillic_em and the built-in <<Paste>> binding never fires --
+    pasting silently does nothing until you switch to a Latin layout. Matching
+    on the hardware keycode instead is layout-agnostic.
+
+    When the keysym IS the Latin letter we do nothing and let Tk's own binding
+    handle it, otherwise the event would be delivered twice and paste twice.
+    """
+    actions = {86: "<<Paste>>", 67: "<<Copy>>", 88: "<<Cut>>", 65: "select-all"}
+
+    def on_control_key(event):
+        if event.keysym.lower() in ("v", "c", "x", "a"):
+            return None                      # Latin layout: Tk already handles it
+        action = actions.get(getattr(event, "keycode", None))
+        if action is None:
+            return None
+        widget = event.widget
+        if action == "select-all":
+            try:
+                widget.select_range(0, "end")
+                widget.icursor("end")
+            except Exception:
+                try:
+                    widget.tag_add("sel", "1.0", "end-1c")
+                except Exception:
+                    return None
+            return "break"
+        try:
+            widget.event_generate(action)
+        except Exception:
+            return None
+        return "break"
+
+    def popup(event):
+        widget = event.widget
+        menu = tk.Menu(widget, tearoff=0)
+        menu.add_command(label="Cut",
+                         command=lambda: widget.event_generate("<<Cut>>"))
+        menu.add_command(label="Copy",
+                         command=lambda: widget.event_generate("<<Copy>>"))
+        menu.add_command(label="Paste",
+                         command=lambda: widget.event_generate("<<Paste>>"))
+        menu.add_separator()
+
+        def select_all():
+            try:
+                widget.select_range(0, "end")
+                widget.icursor("end")
+            except Exception:
+                widget.tag_add("sel", "1.0", "end-1c")
+
+        menu.add_command(label="Select all", command=select_all)
+        try:
+            widget.focus_set()
+            menu.tk_popup(event.x_root, event.y_root)
+        finally:
+            menu.grab_release()
+        return "break"
+
+    for klass in ("TEntry", "Entry", "TCombobox", "Text"):
+        try:
+            root.bind_class(klass, "<Control-KeyPress>", on_control_key, add="+")
+            root.bind_class(klass, "<Button-3>", popup, add="+")
+        except tk.TclError:
+            pass
 
 
 def card(parent, **kwargs):
